@@ -1,0 +1,25 @@
+<!-- Image -->
+<a id="img-<%= id %>" class="imgModal<% if float %> float<%= float %><% end %>" href="#imgModal-<%= id %>" data-toggle="modal">
+  <img src="<%= scaled_image %>" width="<%= scaled_width %>" height="<%= scaled_height %>" title="Click for larger view<% if title %> of <%= title %><% end %>." />
+</a>
+<div style="float: none;"></div>
+
+<!-- Modal -->
+<div class="modal fade" id="imgModal-<%= id %>" tabindex="-1" role="dialog" aria-labelledby="imgModal-<%= id %>Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <% if title %>
+        <h4 class="modal-title"><%= title %></h4>
+        <% end %>
+      </div>
+      <div class="modal-body">
+        <img src="<%= image %>" width="<%= full_width %>" height="<%= full_height %>" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
