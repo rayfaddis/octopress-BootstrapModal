@@ -4,10 +4,10 @@ For the [Octopress][] blogging engine.
 
 Uses Twitter Bootstrap Modal windows for displaying larger images in a popup dialog. Allows for scaled down clickable thumbnails with the use of Mini Magick to calculate the appropriate size with a given percentage.
  
-This plugin is useful when you want to display an image as a thumbnail, with the option to display it in it's full size with a popup. Alternatively you may just have an image that's too wide for the blog.
+This plugin is useful when you want to display an image as a thumbnail, with the option to display it in its full size with a popup. Alternatively you may just have an image that's too wide for the blog.
 
 ## About
-This project originated from the [bmc\octopress-plugins][] project which is a good jQuery UI example and thus is still almost identical. View Brian's [A Simple Octopress Image Popup Plugin][blog-image-popup] blog post on the original plugin.
+This project originated from the [bmc\octopress-plugins][] project, which is a good jQuery UI example and thus is still almost identical. View Brian's [A Simple Octopress Image Popup Plugin][blog-image-popup] blog post on the original plugin.
 
 This plugins is merely a Bootstrap implementation versus the jQuery UI version and also includes the ability to float\align your thumbnail image.
 
