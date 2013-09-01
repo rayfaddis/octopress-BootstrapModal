@@ -1,10 +1,20 @@
 Boostrap Image Modal for Octopress
 ========================
-For the Octopress blogging engine.
+For the [Octopress][] blogging engine.
 
 Uses Twitter Bootstrap Modal windows for displaying larger images in a popup dialog. Allows for scaled down clickable thumbnails with the use of Mini Magick to calculate the appropriate size with a given percentage.
  
 This plugin is useful when you want to display an image as a thumbnail, with the option to display it in it's full size with a popup. Alternatively you may just have an image that's too wide for the blog.
+
+## About
+This project originated from the [bmc\octopress-plugins][] project which is a good JQuery UI example and thus is still almost identical. View Brian's [A Simple Octopress Image Popup Plugin][blog-image-popup] blog post on the original plugin.
+
+This plugins is merely a Boostrap implementaiton versus the jQuery UI version and also includes the ability to float\align your thumbnail image.
+
+Future Ehancements:
+
+1. Ability to generate actual seperate and smaller thumbnails images versus letting the browser size down the original via width and height attributes.
+2. Generate modals for more than images (text, videos, AJAX requests, etc.).
 
 ## Prerequisites
 1. The "mini_magick" and "erubis" gems
@@ -32,15 +42,19 @@ Note: For me I also needed to update my Perl version as implemting this broke th
         gem 'mini_magick'
         gem 'erubis'
 
-	Don't forget to run a `bundle install` to install the gems
+	Don't forget to run a `bundle install` afterwords to install the gems
 
-2. JS and CSS
+2. JavaScript and CSS
 
-	Add these lines to your `sources/_includes/custom/head.html` file:
+	Add these lines to your `source/_includes/custom/head.html` file:
 
         <!--Twitter Boostrap-->
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        
+	Note: The jQuery libary should already be included your `source/_includes/head.html` file. If not include it by adding the following inbetween the head tags:
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 3. Copy the plugin
 
@@ -68,8 +82,9 @@ For a live example visit http://www.rayfaddis.com/blog/2013/05/27/jquery-validat
 ## License
 This plugin is licensed under the [BSD 3-Clause License][bsd-license]
 
-[blog-image-popup]: http://brizzled.clapper.org/blog/2012/02/05/a-simple-octopress-image-popup-plugin/
 [Octopress]: http://octopress.org/
+[bmc\octopress-plugins]: https://github.com/bmc/octopress-plugins
+[blog-image-popup]: http://brizzled.clapper.org/blog/2012/02/05/a-simple-octopress-image-popup-plugin/
 [ImageMagick]: http://www.imagemagick.org/
 [MacPorts]: http://www.macports.org/
 [jQuery]: http://jquery.com/
