@@ -1,4 +1,4 @@
-Boostrap Image Modal for Octopress
+Bootstrap Image Modal for Octopress
 ========================
 For the [Octopress][] blogging engine.
 
@@ -7,13 +7,13 @@ Uses Twitter Bootstrap Modal windows for displaying larger images in a popup dia
 This plugin is useful when you want to display an image as a thumbnail, with the option to display it in it's full size with a popup. Alternatively you may just have an image that's too wide for the blog.
 
 ## About
-This project originated from the [bmc\octopress-plugins][] project which is a good JQuery UI example and thus is still almost identical. View Brian's [A Simple Octopress Image Popup Plugin][blog-image-popup] blog post on the original plugin.
+This project originated from the [bmc\octopress-plugins][] project which is a good jQuery UI example and thus is still almost identical. View Brian's [A Simple Octopress Image Popup Plugin][blog-image-popup] blog post on the original plugin.
 
-This plugins is merely a Boostrap implementaiton versus the jQuery UI version and also includes the ability to float\align your thumbnail image.
+This plugins is merely a Bootstrap implementation versus the jQuery UI version and also includes the ability to float\align your thumbnail image.
 
-Future Ehancements:
+Future Enhancements:
 
-1. Ability to generate actual seperate and smaller thumbnails images versus letting the browser size down the original via width and height attributes.
+1. Ability to generate actual separate and smaller thumbnails images versus letting the browser size down the original via width and height attributes.
 2. Generate modals for more than images (text, videos, AJAX requests, etc.).
 
 ## Prerequisites
@@ -28,11 +28,11 @@ Future Ehancements:
 
 	I recommend the hosted version https://developers.google.com/speed/libraries/devguide#jquery.
 
-4. [Twitter Boostrap][]
+4. [Twitter Bootstrap][]
 
-	This example uses Boostrap 3.0 provided by http://www.bootstrapcdn.com/.
+	This example uses Bootstrap 3.0 provided by http://www.bootstrapcdn.com/.
 
-Note: For me I also needed to update my Perl version as implemting this broke the Octopress build. I went from version 5.10 to 5.16. See http://learn.perl.org/installing/ for upgrading your Perl version.
+Note: For me I also needed to update my Perl version as implementing this plugin broke my Octopress builds. I went from version 5.10 to 5.16. See http://learn.perl.org/installing/ for upgrading your Perl version.
 
 ## Installation
 1. Gemfile
@@ -42,17 +42,17 @@ Note: For me I also needed to update my Perl version as implemting this broke th
         gem 'mini_magick'
         gem 'erubis'
 
-	Don't forget to run a `bundle install` afterwords to install the gems
+	Don't forget to run a `bundle install` afterwards to install the gems
 
 2. JavaScript and CSS
 
 	Add these lines to your `source/_includes/custom/head.html` file:
 
-        <!--Twitter Boostrap-->
+        <!--Twitter Bootstrap-->
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
         
-	Note: The jQuery libary should already be included your `source/_includes/head.html` file. If not include it by adding the following inbetween the head tags:
+	Note: The jQuery libary should already be included your `source/_includes/head.html` file. If not include it by adding the following in-between the head tags:
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
@@ -61,7 +61,7 @@ Note: For me I also needed to update my Perl version as implemting this broke th
   Finally, copy `img_popup.rb` and `img_popup.html.erb` to your `plugins` directory.
 
 ## Usage and Examples
-The plugin implements a [Liquid][] template tag which can be used in blog posts as shown:
+The plugin implements a [Liquid][] template tag, which can be used in blog posts as shown:
    
     {% imgpopup /path/to/image percent% [float alignment (left|right)] [title] %}
 
@@ -88,7 +88,7 @@ This plugin is licensed under the [BSD 3-Clause License][bsd-license]
 [ImageMagick]: http://www.imagemagick.org/
 [MacPorts]: http://www.macports.org/
 [jQuery]: http://jquery.com/
-[Twitter Boostrap]: http://getbootstrap.com
+[Twitter Bootstrap]: http://getbootstrap.com
 [Liquid]: https://github.com/Shopify/liquid
 [w3schools]: http://www.w3schools.com/cssref/pr_class_float.asp
 [bsd-license]: http://opensource.org/licenses/BSD-3-Clause
