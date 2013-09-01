@@ -56,6 +56,33 @@ Note: For me I also needed to update my Perl version as implementing this plugin
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
+  And add the following CSS to your `sass/custom/_styles.scss` file:
+
+        a.imgModal {
+          text-decoration: none;
+          white-space: normal;
+        }
+
+        a.imgModal > img {
+          margin: 0;
+        }
+
+        a.imgModal.floatLeft {
+          float: left;
+        }
+
+        a.imgModal.floatLeft > img {
+          margin: 0 15px 15px 0;
+        }
+
+        a.imgModal.floatRight {
+          float: right;
+        }
+
+        a.imgModal.floatRight > img {
+          margin: 0 0 15px 15px;
+        }
+
 3. Copy the plugin
 
   Finally, copy `img_popup.rb` and `img_popup.html.erb` to your `plugins` directory.
