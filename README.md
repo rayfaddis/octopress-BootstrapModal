@@ -11,7 +11,7 @@ This project originated from the [bmc\octopress-plugins][] project, which is a g
 
 This plugins is merely a Bootstrap implementation versus the jQuery UI version and also includes the ability to float\align your thumbnail image.
 
-Future Enhancements:
+**Future Enhancements:**
 
 1. Ability to generate actual separate and smaller thumbnails images versus letting the browser size down the original via width and height attributes.
 2. Generate modals for more than images (text, videos, AJAX requests, etc.).
@@ -32,7 +32,7 @@ Future Enhancements:
 
 	This example uses Bootstrap 3.0 provided by http://www.bootstrapcdn.com/.
 
-Note: For me I also needed to update my Perl version as implementing this plugin broke my Octopress builds. I went from version 5.10 to 5.16. See http://learn.perl.org/installing/ for upgrading your Perl version.
+**Note:** For me I also needed to update my Perl version as implementing this plugin broke my Octopress builds. I went from version 5.10 to 5.16. See http://learn.perl.org/installing/ for upgrading your Perl version.
 
 ## Installation
 1. Gemfile
@@ -49,14 +49,22 @@ Note: For me I also needed to update my Perl version as implementing this plugin
 	Add these lines to your `source/_includes/custom/head.html` file:
 
         <!--Twitter Bootstrap-->
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
         
-	Note: The jQuery libary should already be included your `source/_includes/head.html` file. If not include it by adding the following in-between the head tags:
+	Also you will need to include the Bootstraps styles and to prevent them from overriding all of your Octopress styles it's probably best to include the following line in your `source/_includes/head.html` file.
+	
+        <!--Twitter Bootstrap-->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+	Place it directly above the following line:
+        
+        <link href="{{ root_url }}/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+        
+	**Note:** The jQuery libary should already be included your `source/_includes/head.html` file. If not include it by adding the following in-between the head tags:
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
-  And add the following CSS to your `sass/custom/_styles.scss` file:
+  	Lastly, add the following CSS to your `sass/custom/_styles.scss` file:
 
         a.imgModal {
           text-decoration: none;
@@ -97,7 +105,7 @@ The plugin implements a [Liquid][] template tag, which can be used in blog posts
   3. The optional float\alignment will align your image and wrap text around it (see [w3schools][]).
   4. The optional title will be the title\tooltip text when hovering over the image and will also be put in the title bar of the modal popup.
 
-Examples:
+**Examples:**
 
     {% imgpopup /images/bigimage.png 50% right My Big Image %} <!--Loaded and fully dressed-->
     {% imgpopup /images/bigimage.png 50% My Big Image %} <!--No alignment, with a title-->
