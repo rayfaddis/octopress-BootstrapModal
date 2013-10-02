@@ -2,16 +2,16 @@ Bootstrap Image Modal for Octopress
 ========================
 For the [Octopress][] blogging engine.
 
-Uses Twitter Bootstrap Modal windows for displaying larger images in a popup dialog. Allows for scaled down clickable thumbnails with the use of Mini Magick to calculate the appropriate size with a given percentage.
+Uses Twitter Bootstrap Modal windows for displaying larger images in a popup dialog. Allows for scaled down clickable thumbnails with the use of Mini Magick to calculate the appropriate size based on a given percentage.
  
-This plugin is useful when you want to display an image as a thumbnail, with the option to display it in its full size with a popup. Alternatively you may just have an image that's too wide for the blog.
+This plugin is useful when you want to display an image as a thumbnail, with the option to display it in its full size with a popup or when you simply have an image that's just too wide for the blog.
 
 ## About
-This project originated from the [bmc\octopress-plugins][] project, which is a good jQuery UI example and thus is still almost identical. View Brian's [A Simple Octopress Image Popup Plugin][blog-image-popup] blog post on the original plugin.
+This project originated from the [bmc\octopress-plugins][] project, which is a good jQuery UI example. This project remains very similar and almost identical to that. You can view Brian's [A Simple Octopress Image Popup Plugin][blog-image-popup] blog post on the original plugin.
 
 This plugins is merely a Bootstrap implementation versus the jQuery UI version and also includes the ability to float\align your thumbnail image.
 
-**Future Enhancements:**
+**Potential Future Enhancements:**
 
 1. Ability to generate actual separate and smaller thumbnails images versus letting the browser size down the original via width and height attributes.
 2. Generate modals for more than images (text, videos, AJAX requests, etc.).
@@ -26,13 +26,15 @@ This plugins is merely a Bootstrap implementation versus the jQuery UI version a
 
 3. [jQuery][] plugin
 
-	I recommend the hosted version https://developers.google.com/speed/libraries/devguide#jquery.
+	I recommend a hosted version by someone like Google, https://developers.google.com/speed/libraries/devguide#jquery.
 
 4. [Twitter Bootstrap][]
 
-	This example uses Bootstrap 3.0 provided by http://www.bootstrapcdn.com/.
+	This example uses Bootstrap 3.0
+	
+	I'm using the http://www.bootstrapcdn.com/ for hosting just the JS, I'm hosting a CSS file locally that is customized/stripped down just for this plugin/project.
 
-**Note:** For me I also needed to update my Perl version as implementing this plugin broke my Octopress builds. I went from version 5.10 to 5.16. See http://learn.perl.org/installing/ for upgrading your Perl version.
+**Note:** I myself also needed to update my Perl version as implementing this plugin broke my Octopress builds. I went from version 5.10 to 5.16. See http://learn.perl.org/installing/ for upgrading your Perl version.
 
 ## Installation
 1. Gemfile
@@ -44,26 +46,27 @@ This plugins is merely a Bootstrap implementation versus the jQuery UI version a
 
 	Don't forget to run a `bundle install` afterwards to install the gems
 
-2. JavaScript and CSS
+2. JavaScript
 
-	Add these lines to your `source/_includes/custom/head.html` file:
+	Add the following lines to your `source/_includes/custom/head.html` file:
 
         <!--Twitter Bootstrap-->
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
         
-	Also you will need to include the Bootstraps styles and to prevent them from overriding all of your Octopress styles it's probably best to include the following line in your `source/_includes/head.html` file.
-	
-        <!--Twitter Bootstrap-->
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-
-	Place it directly above the following line:
-        
-        <link href="{{ root_url }}/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-        
 	**Note:** The jQuery libary should already be included your `source/_includes/head.html` file. If not include it by adding the following in-between the head tags:
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        
+3. CSS
+	
+	Copy the `_botstrap.scss` file to your `sass/custom` directory. This is a stripped down version of the non-minimized Boostrap 3.0 CSS file that only includes the .btn, .btn-primary, .close and .modal classes needed for this plugin to prevent any additional changes or conflicts with your sites layout/theme that may come from other Bootstrap styles.
 
+	**Note** If you are using a Boostrap theme for Octopress I wouldn't include this file and thus would skip updating your `screen.scss` file in the next step as well.
+	
+	Next, update your `sass/screen.scss` file by adding the following line:
+	
+        @import "custom/bootstrap";
+	
   	Lastly, add the following CSS to your `sass/custom/_styles.scss` file:
 
         a.imgModal {
