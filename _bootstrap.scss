@@ -192,6 +192,9 @@ button.close {
   margin-left: auto;
   margin-right: auto;
   width: auto;
+  max-width: 80%;
+  height: auto;
+  max-height: 100%;
   padding: 10px;
   z-index: 1050;
 }
@@ -271,7 +274,10 @@ button.close {
   .modal-dialog {
     left: 50%;
     right: auto;
-    width: 600px;
+    width: auto;
+    max-width: 80%;
+    height: auto;
+    max-height: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
   }
